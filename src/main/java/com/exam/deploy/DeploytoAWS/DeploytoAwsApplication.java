@@ -39,6 +39,17 @@ public class DeploytoAwsApplication {
 		System.out.println("response Headers.."+responseHeaders);
 		
 		
+		
+		// Returning Object Data
+		ResponseEntity<Student> responseObject = restTemplate.exchange(baseUrl+"load/100",
+				HttpMethod.GET,
+				requestEntity,
+				Student.class);
+		
+		Student  studentData = responseObject.getBody();
+		System.out.println("respnse body.."+studentData);
+		
+		
 				
 			
 	}
